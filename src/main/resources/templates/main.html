@@ -5,6 +5,26 @@
     <title>Main</title>
 </head>
 <body>
-
+    <div>
+        <form method="post">
+            <input type="text" name="title" placeholder="title" />
+            <input type="text" name="text" placeholder="text">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div>Posts</div>
+    <div>
+        <form method="post" action="filter">
+            <input type="text" name="filter">
+            <button type="submit">Search</button>
+        </form>
+        <table>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}"></td>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.text}"></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
